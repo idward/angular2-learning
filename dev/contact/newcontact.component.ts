@@ -8,22 +8,22 @@ import {Router, RouteParams} from 'angular2/router';
   template: `
         <div>
             <label for="firstName">FirstName: </label>
-            <input type="text" id="firstName" #firstName>
+            <input type="text" id="firstName">
         </div>
         <div>
             <label for="lastName">LastName: </label>
-            <input type="text" id="lastName" #lastName value="{{param_lastname}}">
+            <input type="text" id="lastName">
         </div>
         <div>
             <label for="phone">Phone: </label>
-            <input type="text" id="phone" #phone>
+            <input type="text" id="phone">
         </div>
         <div>
             <label for="email">Email: </label>
-            <input type="text" id="email" #email>
+            <input type="text" id="email">
         </div>
         <div class="btn">
-            <button (click)="addContact(firstName.value,lastName.value,phone.value,email.value)">Create Contact</button>
+            <button (click)="addContact()">Create Contact</button>
         </div>
     `,
   providers: [ContactService]
