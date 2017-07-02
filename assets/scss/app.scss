@@ -1,0 +1,42 @@
+body {
+  padding: 32px;
+  margin: 32px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+}
+
+header {
+  margin-bottom:20px;
+}
+
+.main div {
+  line-height: 25px;
+}
+
+.main .btn {
+  margin-top: 20px;
+  text-align: left;
+}
+
+header nav a {
+  color: #2e90f0;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+header nav a:hover, header nav a:active {
+  color: #3bc5f0;
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+}
+
+input {
+
+}
+
+.clicked {
+  color: red;
+}
