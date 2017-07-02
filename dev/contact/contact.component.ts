@@ -34,6 +34,6 @@ export class ContactComponent {
   constructor(private _router:Router){}
 
   addNewContact(contact){
-    this._router.navigate(['NewContactFromThis',{lastName:contact.lastName}])
+    this._router.navigate(['NewContact',{lastName:contact.lastName}])
   }
 }

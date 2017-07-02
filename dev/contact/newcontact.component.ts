@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {ContactService} from './contact.service';
 import {Contact} from './contact';
 import {Router, RouteParams} from 'angular2/router';
@@ -29,8 +29,8 @@ import {Router, RouteParams} from 'angular2/router';
   providers: [ContactService]
 })
 
-export class NewContactComponent {
-  public param_lastname = this._routeParams.params['lastName'];
+export class NewContactComponent implements OnInit{
+  public param_lastname;
 
   constructor(private _contactService:ContactService,private _router:Router,
               private _routeParams:RouteParams) {}
@@ -39,5 +39,9 @@ export class NewContactComponent {
     let newContact:Contact = {firstName: firstName, lastName: lastName, phone: phone, email: email};
     this._contactService.insertContact(newContact);
     this._router.navigate(['Contacts']);
+  }
+
+  ngOnInit():any {
+    this.param_lastname = this._routeParams.params['lastName'];
   }
 }
