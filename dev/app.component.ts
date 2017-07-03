@@ -1,19 +1,19 @@
 import {Component} from 'angular2/core';
-import {ChildComponent} from './input-output/child.component';
+import {MyComponent1} from './dependency-injection/c1.component';
+import {MyComponent2} from './dependency-injection/c2.component';
 
 @Component({
   selector: 'my-app',
   template: `
-       <div class="parent">
-           <h3>Parent</h3>
-           <p>Parent Value From Child:{{childValue}}</p>
-           <input type="text" #parentInput value="" (keyup)="0">
-           <child [passedValue]="parentInput.value" (childValueChanged)="childValue = $event"></child>
-       </div> 
+      <section class="component">
+            <my-component-1></my-component-1>
+      </section>
+      <section class="component">
+            <my-component-2></my-component-2>
+      </section>
     `,
-  directives:[ChildComponent]
+  directives:[MyComponent1,MyComponent2]
 })
 
 export class AppComponent {
-    public childValue:string;
 }
