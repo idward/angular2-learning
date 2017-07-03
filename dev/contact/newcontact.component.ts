@@ -51,7 +51,7 @@ export class NewContactComponent implements OnInit {
     this.param_lastname = this._routeParams.params['lastName'];
     this.myForm = this._formbuilder.group({
       firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
+      lastName: [this.param_lastname, Validators.required],
       phone: ['', Validators.required],
       email: ['', Validators.required]
     });
