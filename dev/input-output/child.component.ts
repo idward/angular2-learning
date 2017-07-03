@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component, Output} from 'angular2/core';
 import {EventEmitter} from 'angular2/core';
 
 @Component({
@@ -10,12 +10,12 @@ import {EventEmitter} from 'angular2/core';
             <input type="text" #childInput value="" (keyup)="onChange(childInput.value)">
         </div>
     `,
-  inputs:['parentValue'],
-  outputs:['childValueChanged']
+  inputs:['parentValue:passedValue'],
+  //outputs:['childValueChanged']
 })
 
 export class ChildComponent {
-  public childValueChanged = new EventEmitter<string>();
+  @Output() public childValueChanged = new EventEmitter<string>();
 
   onChange(value:string){
     this.childValueChanged.emit(value);

@@ -8,7 +8,7 @@ import {ChildComponent} from './input-output/child.component';
            <h3>Parent</h3>
            <p>Parent Value From Child:{{childValue}}</p>
            <input type="text" #parentInput value="" (keyup)="0">
-           <child [parentValue]="parentInput.value" (childValueChanged)="childValue = $event"></child>
+           <child [passedValue]="parentInput.value" (childValueChanged)="childValue = $event"></child>
        </div> 
     `,
   directives:[ChildComponent]
